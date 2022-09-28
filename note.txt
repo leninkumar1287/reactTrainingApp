@@ -1,0 +1,146 @@
+--> React Js :- It is an open-source , cross-platform Javascipt library used to devlop User Interfaces (UI) (Front-End)
+  -> View Layer of the application 
+  -> It is used to develop SPA (Single Page Application)
+  -> It is maintained by Facebook.
+  -> With the help of React Js we can develop web application and with the help of React Native we can develop mobile apps.
+  --> pre-request :- Good knowleage of Javascipt (Es 6) features 
+     let , const , template literals , spread operator , rest parameter , map , filter , reduce , destructuring , class , inheritance , generators and iterators , callback , promise and async/await 
+  --> Features of react js 
+      -> Component based architecture 
+      -> Virtual DOM (performance is fast)
+      -> JSX Features :- we can write html code within Javascipt code.
+  --> Environmental Setup 
+       -> We need a node js environment 
+          node version >14.0 
+          https://nodejs.org/en/download/ (downlaod and install)
+          -> to check node is install or not 
+            -> open cmd or terminal 
+              node -v 
+              npm :- node package manager (we can download all node packages with the help of npm)
+       -> How we create react app 
+           npx create-react-app demo 
+       -> How we run react app 
+          cd demo 
+          npm start (open in default browser in port 3000)
+    ->   FOlder Structure | Directory structure 
+       -> node_modules :- It is a folder where all the 3rd party modules are define
+       -> public :- where we can store our assets files (css,js,images,fonts)etc and in this folder there is a index.html file , the main html file which execute when a app is server.
+       -> package.json :- all node module dependencies are define there and also define the setting of the application.
+       -> package-lock.json :- dependencies with their versions are define 
+       -> README.md :- all the project details are define 
+       -> ** src :- main folder 
+           -> index.js : main Javascipt entry point file .When app is executed the index.js file get the id root from index.html and load App component in that id.
+           -> App.js :- It is a default component which is render when a react application is execute 
+      -> How react application is boot (execute)
+         index.html 
+         <div id="root"></div>
+          ---> call/boot --> src/index.js (main Javascipt entry point file)---> it get id root from index.html and load the App component (default component) in that id root div.
+      -> Dynamic Data Binding 
+         expression :- { }
+      -> if we want to render array or object we have map() function
+
+
+      --> Components :- are the core building blocks of react app. It is used for reusability. Every component have their own logic and design.
+         -> Types of Components 
+            -> Class Component 
+            -> Function Component
+            -> Class Component :- in this we can manage the states.
+               -> How we create a class component 
+                  component name is start with capital letter 
+                  eg:
+               Myclass.js 
+               import React,{Component} from 'react';
+               class Myclass extends Component {
+                   //logics there 
+                   render(){
+                      return(<>
+                        <h2> Myclass Component </h2>
+                      </>)
+                   }
+               }
+               export default Myclass;
+               -> How we reuse component 
+               import Myclass from './Myclass';
+               <Myclass />
+               ** in class component if we want to access any variables we use this keyword.
+            -> Vs code extension of react
+            ES7+ React/Redux/React-Native
+
+            -> props (properties) :- props are used to pass data from parent component to child component. (read only - immutable)
+              App.js 
+                 title="My class Component";
+                <Myclass mytitle={title}/>
+                -> How we read props in class component 
+                  this.props.proname 
+                  {this.props.mytitle}
+            -> states :- are used to manage data within a component. states are mutable (we change)
+            //define state 
+                constructor(props){
+                    super(props);
+                    this.state={count:0}
+                }
+            // read state 
+            {this.state.count}
+            // update state 
+              this.setState({count:this.state.count+1})
+              ** when a state data is update it automatically updated in dom
+         -> Life Cycle Methods class components 
+           -> 3 Phases 
+              -> Mounting :- means putting elements into the DOM.When a component is loaded.
+                  -> componentDidMount() :- classes only once when component is render.It is a good place to call some API when we want to call when a component is render.
+              -> Updating :- When there is any change in props or states 
+                 -> componentDidUpdate()
+              -> Unmounting :- when we leave from the component (flushup some data)
+                 -> componentWillUnmount()
+         -> Function COmponents :- 
+           -> How we create 
+             Myfunction.js 
+             import React from 'react';
+             function Myfunction(){
+                return(<>
+                  <h2> Welcome to Function Component </h2>
+                </>)
+             }
+             export default Myfunction;
+             -> state :- React introduced hooks in react 16.8 version. After that we can manage the state in function component.
+               -> hooks start with use 
+               -> useState() :- to manage state in function component
+         -> Routing :- It is a process for navigating between multiple pages into a single page.
+           -> With the help of routing we can create SPA (Single Page Application)
+              -> React Router module (package) (V6)
+                 npm install react-router-dom --save 
+                 -> BrowserRouter :- to load dynamic routes .Means a container where we define all application code
+                 -> Routes :- same as switch where we define all route 
+                 -> Route :- define a path , if path match with URL then load componeny 
+                 -> Link :- Hyperlink 
+                 -> Outlet :- It is a container used to load child routes   
+             Layout 
+         Home  About  Gallery  Contact Us 
+          <section>
+            //load all dynamic components when url match with route
+          </section>
+
+          --> How we apply styles 
+            -> inline 
+              <h1 style={{color:'red'}}> Heading </h1>
+            -> To call a class 
+              className (JSX)
+         --> How we intergarte Bootstrap in React 
+            1st way :
+               link cdn files in index.html 
+            2nd way 
+              npm install bootstrap --save 
+            index.js 
+            import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
+            --> Params | Query String (Pass data through URL)
+             const [category,setCategory]=useState(['mens','womens','kids'])
+             {category?.map((cat,ind)=>
+            <li key={ind}><Link className="dropdown-item" to={`/category/${cat}`}>{cat}</Link></li>
+            )}
+            -> Routing 
+             <Route path="/category/:cn" element={<Category />}/>
+            -> Read Param in Category component 
+              useParams (react-router-dom)
+
+      
+    
