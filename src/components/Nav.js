@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 export default function Nav() {
-  const [category, setCategory] = useState(['mens', 'womens', 'kids'])
+  const [category] = useState(['mens', 'womens', 'kids'])
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">Navbar</a>
+        <Link className="navbar-brand" to="#">Navbar</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -16,9 +16,9 @@ export default function Nav() {
             </li>
 
             <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown
-              </a>
+              </Link>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 {category?.map((cat, ind) =>
                   <li key={ind}><Link className="dropdown-item" to={`/category/${cat}`}>{cat}</Link></li>
@@ -45,6 +45,9 @@ export default function Nav() {
             </li>
             <li className="nav-item">
               <Link className="nav-link " to="/todo">Todo</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link " to="/products">Products</Link>
             </li>
           </ul>
           <form className="d-flex">

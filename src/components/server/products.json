@@ -1,34 +1,32 @@
 {
-    "products": [
-        {
-            "userName": "leninkumar",
-            "id": "123",
-            "city": "chennai",
-            "age": 23
-        },
-        {
-            "userName": "lwqeqweqwe",
-            "id": "123",
-            "city": "lololo",
-            "age": 12
-        },
-        {
-            "userName": "eaweqwer",
-            "id": "132",
-            "city": "gapitnath",
-            "age": 2111
-        },
-        {
-            "userName": "mar",
-            "id": "123",
-            "city": "madurai",
-            "age": 32
-        },
-        {
-            "userName": "leninkumar",
-            "id": "123",
-            "city": "chennai",
-            "age": 20
-        }
-    ]
+  "products": [
+    {
+      "userName": "leninkumar",
+      "id": "1",
+      "city": "vellakov",
+      "age": 23,
+      "image": "https://picsum.photos/200/500"
+    },
+    {
+      "userName": "mahevar",
+      "id": "3",
+      "city": "vaadipat",
+      "age": 2111,
+      "image": "https://picsum.photos/200/500"
+    },
+    {
+      "userName": "tentaishy",
+      "id": "4",
+      "city": "permabi",
+      "age": 32,
+      "image": "https://picsum.photos/200/500"
+    },
+    {
+      "userName": "gobinath",
+      "id": "5",
+      "city": "chennai",
+      "age": 20,
+      "image": "https://picsum.photos/200/500"
+    }
+  ]
 }
