@@ -31,6 +31,28 @@ export default function Products() {
         }
     }
 
+    const addToCart = (prod) => {
+        console.log(localStorage)
+        if (localStorage.getItem('mycart') != undefined) {
+            let cartBucket = JSON.parse(localStorage.getItem('mycart'))
+            if (cartBucket.includes(prod.id)) {
+                alert(" product already added in cart ")
+            }
+            else
+                cartBucket.push(prod.id)
+                localStorage.setItem('mycart', JSON.stringify(cartBucket))
+                alert(" product added to the cart successfully ")
+
+        }
+        else {
+            let cartBucket = [];
+            cartBucket.push(prod.id)
+            localStorage.setItem('mycart', JSON.stringify(cartBucket))
+            alert("product added to the cart successfully")
+
+        }
+    }
+
     return (
         <div>
             <h2> Product </h2>
@@ -46,6 +68,7 @@ export default function Products() {
                             Age : {pro.age} </p>
                         <Link to={`/edit/${pro.id}`} className="btn btn-primary"> Edit</Link>
                         <button className='btn btn-danger' onClick={() => delPro(pro)}> Delete</button>
+                        <button className='btn btn-primary' onClick={() => addToCart(pro)}> Add to Card </button>
                     </div>
                 </div>
             )}
