@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
-export default function Users() {
+export default function User() {
     const [userData,setUserData]=useState([]);
     useEffect(()=>{
         const API="https://jsonplaceholder.typicode.com/users";

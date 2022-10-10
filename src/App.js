@@ -4,13 +4,14 @@ import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Category from "./components/Category";
 import Posts from "./components/Posts";
-import Users from "./components/Users";
+import Users from "./components/User";
 import Comments from "./components/Comments";
 import Albums from "./components/Albums";
 import Todos from "./components/Todos";
 import Photos from "./components/Photos";
 import Products from "./components/Products";
-import UpdateProductDetail from "./components/UpdateProductDetails"
+import UpdateUserDetail from "./components/UpdateUserDetails"
+import AddNewUser from "./components/AddNewUser";
 function App() {
   return (
     <div>
@@ -28,7 +29,8 @@ function App() {
             <Route path='/todo' element={<Todos />} />
             <Route path='/photos' element={<Photos />} />
             <Route path='/products' element={<Products />} />
-            <Route path='/edit/:cn' element={< UpdateProductDetail />} />
+            <Route path='/adduser' element={<AddNewUser />} />
+            <Route path='/edit/:id' element={< UpdateUserDetail />} />
 
 
           </Routes>

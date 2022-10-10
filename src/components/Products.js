@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { getAllUsers, deleteUserById, getUserById } from './services/ProductService';
+import { getAllUsers, deleteUserById } from './services/ProductService';
 
 export default function Products() {
     const [proData, setProData] = useState([]);
@@ -19,9 +19,8 @@ export default function Products() {
                     console.log(" inside  : ")
                     if (res.data) {
                         alert("Product Deleted");
-                        let data = proData.filter(pro =>
-                            product.id !== product.id
-                        );
+                        // eslint-disable-next-line
+                        let data = proData.filter(pro => product.id !== product.id);
                         setProData(data);
                         getAllUsers()
                             .then(res => {
@@ -35,7 +34,7 @@ export default function Products() {
     return (
         <div>
             <h2> Product </h2>
-            <Link to="/addproduct" className='btn btn-primary'> Add users</Link>
+            <Link to="/adduser" className='btn btn-primary'> Add users</Link>
             {/* <input type={text} ></input> */}
             <div className='row'>{proData?.map(pro =>
                 <div className="col-sm-4 card" style={{ width: '18rem' }}>

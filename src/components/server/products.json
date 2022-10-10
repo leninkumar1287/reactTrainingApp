@@ -8,6 +8,13 @@
       "image": "https://picsum.photos/200/500"
     },
     {
+      "userName": "karthick",
+      "id": "2",
+      "city": "madurai",
+      "age": 12,
+      "image": "https://picsum.photos/200/500"
+    },
+    {
       "userName": "mahevar",
       "id": "3",
       "city": "vaadipat",
@@ -27,6 +34,13 @@
       "city": "chennai",
       "age": 20,
       "image": "https://picsum.photos/200/500"
+    },
+    {
+      "userName": "kishore",
+      "age": "30",
+      "city": "dharapuram",
+      "image": "https://picsum.photos/200/500",
+      "id": "GudTtCz"
     }
   ]
 }
