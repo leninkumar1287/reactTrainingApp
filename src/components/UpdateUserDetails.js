@@ -6,13 +6,13 @@ export default function UpdateProductDetails() {
   let [dataPayload, setDataPayload] = useState({})
   let {id} = useParams();
   useEffect(()=>{
-    console.log(" dataPayload : ", dataPayload)
+    // console.log(" dataPayload : ", dataPayload)
 
     getUserById(id)
     .then(res=>{
         if(res.data){
           setDataPayload(res.data);
-          console.log(" dataPayload : ", dataPayload)
+          console.log(" dataPayload : ", dataPayload.data)
         }
     })
 },[])

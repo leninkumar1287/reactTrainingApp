@@ -6,8 +6,6 @@ export default function AddNewUser() {
     let [payload, setPayload] = useState({ userName: '', age: '', city: '', image: '' })
     const navigate = useNavigate();
     const handler = (event) => {
-        console.log(" event  : ", event )
-        console.log(" evenet.tartget : ", event.target)
         const {name, value }= event.target
         setPayload({...payload,[name]:value})
     }

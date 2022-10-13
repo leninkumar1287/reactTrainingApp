@@ -40,8 +40,8 @@ export default function Products() {
             }
             else
                 cartBucket.push(prod.id)
-                localStorage.setItem('mycart', JSON.stringify(cartBucket))
-                alert(" product added to the cart successfully ")
+            localStorage.setItem('mycart', JSON.stringify(cartBucket))
+            alert(" product added to the cart successfully ")
 
         }
         else {
